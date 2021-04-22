@@ -1,5 +1,5 @@
 <script>
-    import {login} from "./stacks.js"
+    import {BtnAuth,BtnAuthText} from "./data.js"
 </script>
 
-<button on:click={login}>login</button>
+<button on:click={$BtnAuth}>{$BtnAuthText}</button>

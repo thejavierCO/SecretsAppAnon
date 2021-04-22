@@ -13,14 +13,12 @@ export const login = ()=>{
             icon:window.location.origin +"/icon.svg"
         },
         redirectTo:"/",
-        finished:()=>{
-            console.log("end")
-        }
+        finished:()=>window.location.reload()
     })
 }
 export const exit = ()=>{
     userSession.signUserOut();
-    console.log("exit");
+    window.location.reload();
 };
 
 export const isSingIn = ()=>userSession.isUserSignedIn();
