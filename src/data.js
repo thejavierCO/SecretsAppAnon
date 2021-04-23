@@ -25,6 +25,6 @@ export const AuthStorage = derived(Auth(),Auth=>{
     let files = [];
     if(Auth)return storage
     .listFiles(e=>{console.log(e);files.push(e);return true;})
-    .then(_=>files.map(e=>storage.getFile(e,{decrypt:false})));
+    .then(_=>files.map(name=>storage.getFile(name,{decrypt:false}).then(e=>({[name]:e}))));
     else return false
 })
