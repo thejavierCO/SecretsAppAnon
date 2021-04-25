@@ -1,3 +1,4 @@
+import { derived , readable , writable } from "svelte/store"
 import { showConnect , AppConfig , UserSession } from "@stacks/connect";
 import { Profile } from "@stacks/profile";
 import { Storage } from '@stacks/storage';
@@ -5,6 +6,10 @@ import { Storage } from '@stacks/storage';
 export const appConfig = new AppConfig(["store_write","publish_data"]);
 export const userSession = new UserSession({ appConfig });
 export const storage = new Storage({ userSession });
+
+export const auth = ()=>{
+    const {subscribe,set} = writable(false,set=>{})
+}
 
 export const login = ()=>{
     showConnect({
