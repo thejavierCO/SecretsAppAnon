@@ -1,6 +1,8 @@
 <script>
-    import {BtnAuth,BtnAuthText} from "./data.js";
+    import { BtnAuth , BtnAuthText , auth } from "./data.js";
     const test = $$restProps;
 </script>
 
-<button on:click={$BtnAuth} {...test}>{$BtnAuthText}</button>
+<button on:click={$BtnAuth} {...test}>
+    <slot name="text" status={ $auth }>{ $BtnAuthText }</slot>
+</button>
