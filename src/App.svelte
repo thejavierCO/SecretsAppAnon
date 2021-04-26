@@ -1,23 +1,28 @@
 <script>
 	import Auth from "./Auth.svelte";
 </script>
-<ul>
-	<li>
-	</li>
+
+<div class="Menu">
+	<Auth>
+		<button slot="singIn">dashboard</button>
+	</Auth>
 	<Auth let:Btn>
 		<Btn></Btn>
 	</Auth>
-	<Auth>
-		<li slot="singIn">dashboard</li>
-	</Auth>
-</ul>
+</div>
+
+
 <Auth>
 	<div slot="singIn" let:auth>
 		{auth.name}
 	</div>
 </Auth>
-<Auth>
-	<div slot="singIn" let:storage>
-		{storage.putFile("test",JSON.stringify("ahsdih"),{encrypt:true})}
-	</div>
-</Auth>
+
+<style>
+	.Menu{
+		position:relative;
+		margin:0;
+		background:red;
+		padding:10px;
+	}
+</style>
